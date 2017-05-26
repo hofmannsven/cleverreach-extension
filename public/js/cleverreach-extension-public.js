@@ -26,13 +26,16 @@
 					$cr_container.find( cre.selector + cre.loading_selector ).remove();
 					if ( response.type === 'success' ) {
 						$cr_container.append( '<p class="' + cre.response_selector + ' ' + cre.success_selector + '">' + cre.success + '</p>' );
+						$cr_container.trigger('cre:success', response);
 					} else {
 						$cr_container.append( '<p class="' + cre.response_selector + ' ' + cre.error_selector + '">' + response.status + '</p>' );
+						$cr_container.trigger('cre:error', response);
 					}
 				},
-				error     : function() {
+				error     : function(response, status, error) {
 					$cr_container.find( cre.selector + cre.loading_selector ).remove();
 					$cr_container.append( '<p class="' + cre.response_selector + ' ' + cre.error_selector + '">' + cre.error + '</p>' );
+					$cr_container.trigger('cre:server_error', response, status, error);
 				}
 			} );
 
@@ -42,3 +45,4 @@
 
 	}
 )( jQuery );
+

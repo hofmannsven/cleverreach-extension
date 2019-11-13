@@ -52,7 +52,7 @@ Using the latest version of WordPress and PHP is highly recommended.
 1. Install and activate: `wp plugin install cleverreach-extension --activate`
 
 ### Using Composer
-1. Install: `composer require hofmannsven/cleverreach-extension:dev-master`
+1. Install: `composer require hofmannsven/cleverreach-extension`
 2. Activate the plugin on the plugin dashboard
 
 ### Using WordPress
